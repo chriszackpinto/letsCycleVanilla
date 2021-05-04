@@ -1,0 +1,159 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+  font-family: "Antonio", sans-serif;
+}
+::selection {
+  background: #5a5a5a;
+  color: #eb4329;
+}
+
+body {
+  background-color: #171717;
+}
+header {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 90%;
+  margin: auto;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  color: #bebebe;
+  border-bottom: 10px solid #5a5a5a;
+  margin-bottom: 1.5rem;
+}
+
+.heading {
+  font-size: 6rem;
+  font-weight: bolder;
+}
+header h2 {
+  color: #eb4329;
+  font-weight: normal;
+}
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.tides {
+  display: flex;
+  margin-bottom: 1rem;
+}
+.card {
+  color: #bebebe;
+  width: 25vw;
+  height: 25vh;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: space-between;
+  transition: all 0.3s ease;
+}
+table {
+  display: none;
+}
+
+.first::before {
+  content: "Last Tide";
+  color: #eb4329;
+}
+.second {
+  border-left: 10px solid #5a5a5a;
+  border-right: 10px solid #5a5a5a;
+}
+.second::before {
+  content: "Next Tide";
+  color: #eb4329;
+}
+.third::before {
+  content: "Later Tide";
+  color: #eb4329;
+}
+.api2 {
+  display: flex;
+  margin-top: 1rem;
+}
+.temperature,
+.wind {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 30vw;
+  justify-content: space-between;
+  color: #bebebe;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+h3 {
+  color: #ffffff;
+}
+.tempSec {
+  display: flex;
+  align-items: baseline;
+  color: #eb4329;
+}
+.tempSec span {
+  margin: 0.15rem;
+}
+.temperature {
+  cursor: pointer;
+  border-right: 5px solid #5a5a5a;
+}
+.wind {
+  border-left: 5px solid #5a5a5a;
+}
+.wind-compass {
+  width: 75px;
+  height: auto;
+}
+
+#state1,
+#state2,
+#state3 {
+  color: #ffffff;
+}
+footer {
+  width: 100%;
+  background-color: #181818;
+  color: #bebebe;
+  display: flex;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 768px) {
+  .tides,
+  .api2 {
+    flex-direction: column;
+  }
+  .temperature {
+    border-right: none;
+    border-bottom: 10px solid #5a5a5a;
+    padding-bottom: 2rem;
+  }
+  .wind {
+    border-left: none;
+    padding-bottom: 2rem;
+  }
+  .second {
+    border-left: none;
+    border-right: none;
+    border-top: 10px solid #5a5a5a;
+    border-bottom: 10px solid #5a5a5a;
+  }
+  .third {
+    border-bottom: 10px solid #5a5a5a;
+  }
+  .card {
+    padding-top: 1.5rem;
+  }
+  .temperature {
+    margin-bottom: 3rem;
+  }
+}
+@media only screen and (max-width: 425px) {
+}

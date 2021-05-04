@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Let's Cycle!</title>
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./img/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./img/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./img/favicon-16x16.png"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Antonio:wght@700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script defer src="app.js"></script>
+  </head>
+
+  <body>
+    <header>
+      <!-- <img src="./img/cycle.png.png" alt="" class="bike" /> -->
+
+      <h1 class="heading">CYCLE ON THE BEACH!</h1>
+
+      <h2>TIDAL TIMES</h2>
+    </header>
+    <main>
+      <div class="tides">
+        <div class="card first">
+          <h3 id="state1">Loading...!</h3>
+          <h4 id="time1"></h4>
+        </div>
+        <div class="card second">
+          <h3 id="state2">Loading...!</h3>
+          <h4 id="time2"></h4>
+        </div>
+        <div class="card third">
+          <h3 id="state3">Loading...!</h3>
+          <h4 id="time3"></h4>
+        </div>
+      </div>
+      <div class="api2">
+        <div class="temperature">
+          <h3>CURRENT WEATHER</h3>
+          <img class="weather-icon tempIcon" src="./icons/unknown.png" />
+          <div class="tempSec">
+            <h2 class="tempDeg">24</h2>
+            <span>C</span>
+          </div>
+          <div class="tempDes">Sunny</div>
+        </div>
+        <div class="wind">
+          <h3>CURRENT WIND</h3>
+          <svg class="wind-compass" viewBox="0 0 65 93">
+            <g fill="#eb4329" fill-rule="evenodd">
+              <path
+                d="M32.5,93 C50.449254,93 65,78.449254 65,60.5 C65,42.550746 53.217448,40.411458 32.5,0.296875 C11.818758,40.358154 0,42.550746 0,60.5 C0,78.449254 14.550746,93 32.5,93 Z M32.5,72 C38.851275,72 44,66.851275 44,60.5 C44,54.148725 38.851275,49 32.5,49 C26.148725,49 21,54.148725 21,60.5 C21,66.851275 26.148725,72 32.5,72 Z"
+              ></path>
+            </g>
+          </svg>
+          <div class="windDir">Loading</div>
+        </div>
+      </div>
+    </main>
+    <footer>&copy;Made by zackendev</footer>
+  </body>
+</html>
