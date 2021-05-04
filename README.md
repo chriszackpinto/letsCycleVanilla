@@ -11,6 +11,6 @@ PS:
 
 I exhausted the TIDE api's 100 requests during testing, and you've gotta take my word that it's awesome
 
-It just mentions High/Low Tide along with the tidal timing
+It just mentions High/Low Tide along with the Tidal Timing
 
 ![Screenshot (70)](https://user-images.githubusercontent.com/81745636/117057724-6c80fb00-ad3b-11eb-83c1-ac0d9ac38f54.png)
