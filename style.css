@@ -42,7 +42,7 @@ main {
 }
 .tides {
   display: flex;
-  margin-bottom: 1rem;
+  padding-bottom: 1rem;
 }
 .card {
   color: #bebebe;
@@ -51,8 +51,14 @@ main {
   display: flex;
   flex-direction: column;
   text-align: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
   transition: all 0.3s ease;
+}
+.card h3 {
+  font-size: 1.5rem;
+}
+.card h4 {
+  font-size: 1rem;
 }
 table {
   display: none;
@@ -76,7 +82,7 @@ table {
 }
 .api2 {
   display: flex;
-  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 .temperature,
 .wind {
@@ -88,6 +94,8 @@ table {
   color: #bebebe;
   margin-bottom: 1rem;
   text-align: center;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 h3 {
   color: #ffffff;
@@ -129,6 +137,7 @@ footer {
   .tides,
   .api2 {
     flex-direction: column;
+    margin-bottom: 1rem;
   }
   .temperature {
     border-right: none;
@@ -137,7 +146,7 @@ footer {
   }
   .wind {
     border-left: none;
-    padding-bottom: 2rem;
+    padding-bottom: 1rem;
   }
   .second {
     border-left: none;
@@ -149,11 +158,16 @@ footer {
     border-bottom: 10px solid #5a5a5a;
   }
   .card {
-    padding-top: 1.5rem;
+    width: 30vw;
+    height: 20vh;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
   }
   .temperature {
-    margin-bottom: 3rem;
+    padding-bottom: 3rem;
+    margin-bottom: 2rem;
   }
-}
-@media only screen and (max-width: 425px) {
+  .header {
+    margin-bottom: 1rem;
+  }
 }
