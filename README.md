@@ -13,4 +13,7 @@ I exhausted the TIDE api's 100 requests during testing, and you've gotta take my
 
 It just mentions High/Low Tide along with the Tidal Timing
 
-![Screenshot (70)](https://user-images.githubusercontent.com/81745636/117057724-6c80fb00-ad3b-11eb-83c1-ac0d9ac38f54.png)
+![Screenshot (72)](https://user-images.githubusercontent.com/81745636/117132815-faeb9000-adc0-11eb-91c5-86df436b5051.png)
+![Screenshot (73)](https://user-images.githubusercontent.com/81745636/117132820-fd4dea00-adc0-11eb-9127-b890a26fbbd6.png)
+![Screenshot (74)](https://user-images.githubusercontent.com/81745636/117132823-ff17ad80-adc0-11eb-93bc-6be9a48bae0b.png)
+
