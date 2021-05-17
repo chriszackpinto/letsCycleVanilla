@@ -1,171 +1,113 @@
 * {
-  margin: 0;
-  padding: 0;
   text-transform: uppercase;
   font-family: "Antonio", sans-serif;
 }
 ::selection {
-  background: #5a5a5a;
+  background: #3f3f3f;
   color: #eb4329;
-}
-
-body {
-  background-color: #292929;
-}
-header {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  width: 90%;
-  margin: auto;
-  text-align: center;
-  flex-direction: column;
-  align-items: center;
-  padding: 1rem;
-  color: #bebebe;
-  border-bottom: 10px solid #5a5a5a;
-  margin-bottom: 1.5rem;
-}
-
-.heading {
-  font-size: 6rem;
-  font-weight: bolder;
-}
-header h2 {
-  color: #eb4329;
-  font-weight: normal;
-}
-main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.tides {
-  display: flex;
-  padding-bottom: 1rem;
-}
-.card {
-  color: #bebebe;
-  width: 25vw;
-  height: 25vh;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  justify-content: space-evenly;
-  transition: all 0.3s ease;
-}
-.card h3 {
-  font-size: 1.5rem;
-}
-.card h4 {
-  font-size: 1rem;
-}
-table {
-  display: none;
-}
-
-.first::before {
-  content: "Last Tide";
-  color: #eb4329;
-}
-.second {
-  border-left: 10px solid #5a5a5a;
-  border-right: 10px solid #5a5a5a;
-}
-.second::before {
-  content: "Next Tide";
-  color: #eb4329;
-}
-.third::before {
-  content: "Later Tide";
-  color: #eb4329;
-}
-.api2 {
-  display: flex;
-  margin-bottom: 1rem;
-}
-.temperature,
-.wind {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 30vw;
-  justify-content: space-between;
-  color: #bebebe;
-  margin-bottom: 1rem;
-  text-align: center;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
 }
 h3 {
   color: #ffffff;
 }
+body {
+  background-color: #292929;
+  text-align: center;
+  margin: auto;
+  color: #bebebe;
+}
+header {
+  width: 90%;
+  margin: auto;
+  border-bottom: 8px solid #5a5a5a;
+}
+header h1 {
+  font-size: 5rem;
+  margin: 0;
+}
+header h2 {
+  color: #eb4329;
+  font-weight: normal;
+  margin-top: 0rem;
+}
+.tides {
+  margin: 1.5rem;
+}
+.card {
+  max-height: 25vh;
+  margin: auto;
+  text-align: center;
+}
+.card:first-child::before {
+  content: "Last Tide";
+  color: #eb4329;
+  font-size: 1.2rem;
+}
+.card:nth-child(2)::before {
+  content: "Next Tide";
+  color: #eb4329;
+  font-size: 1.2rem;
+}
+.card:nth-child(3)::before {
+  content: "Later Tide";
+  color: #eb4329;
+  font-size: 1.2rem;
+}
+.state {
+  font-size: 1.1rem;
+}
+.api2 {
+  margin: 2rem;
+}
+.temperature {
+  cursor: pointer;
+}
+.temperature h3,
+.wind h3 {
+  margin: 0;
+}
+
 .tempSec {
   display: flex;
+  justify-content: center;
   align-items: baseline;
   color: #eb4329;
+}
+.tempSec h4 {
+  margin: 0;
 }
 .tempSec span {
   margin: 0.15rem;
 }
-.temperature {
-  cursor: pointer;
-  border-right: 5px solid #5a5a5a;
-}
-.wind {
-  border-left: 5px solid #5a5a5a;
-}
 .wind-compass {
   width: 75px;
-  height: auto;
 }
-
-.state {
-  color: #ffffff;
+.windDir {
+  padding: 0.5rem;
 }
-footer {
-  width: 100%;
-  background-color: #181818;
-  color: #bebebe;
-  display: flex;
-  justify-content: center;
-}
-
-@media only screen and (max-width: 768px) {
+@media only screen and (min-width: 768px) {
   .tides,
   .api2 {
-    flex-direction: column;
-    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
   }
-  .temperature {
-    border-right: none;
-    border-bottom: 10px solid #5a5a5a;
-    padding-bottom: 2rem;
-  }
+  .card,
+  .temperature,
   .wind {
-    border-left: none;
-    padding-bottom: 1rem;
+    margin: 0;
+    width: 250px;
   }
-  .second {
-    border-left: none;
-    border-right: none;
-    border-top: 10px solid #5a5a5a;
-    border-bottom: 10px solid #5a5a5a;
-  }
-  .third {
-    border-bottom: 10px solid #5a5a5a;
-  }
-  .card {
+
+  .temperature,
+  .wind {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 30vw;
-    height: 20vh;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-  }
-  .temperature {
-    padding-bottom: 3rem;
-    margin-bottom: 2rem;
-  }
-  .header {
-    margin-bottom: 1rem;
+    justify-content: space-between;
+    /* color: #bebebe; */
+    /* margin-bottom: 1rem; */
+    /* text-align: center; */
+    /* padding-top: 1rem; */
+    /* padding-bottom: 1rem; */
   }
 }
