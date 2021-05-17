@@ -120,9 +120,7 @@ h3 {
   height: auto;
 }
 
-#state1,
-#state2,
-#state3 {
+.state {
   color: #ffffff;
 }
 footer {
