@@ -13,7 +13,12 @@ PS:
 
 It ~~just~~ mentions High/Low Tide along with the Tidal Timing **and** Weather along with Wind Speed and Direction!
 
-**Switched APIs**, with a 50/day limit
+
+- [x] **Switch API** (50/day limit)
+- [ ] Update UI
+
+
+
 
 Screenshots: (Old version)
 
