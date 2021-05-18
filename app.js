@@ -94,9 +94,17 @@ window.addEventListener("load", () => {
           console.log(jsonData);
           tides.innerHTML = ``;
           data.map((tide) => {
-            const qTime = new Date(tide.time);
+            const date = new Date(tide.time);
+
+            const day = `${date.getDate()}`.padStart(2, 0);
+            const month = `${date.getMonth() + 1}`.padStart(2, 0);
+            const year = date.getFullYear();
+            const hour = `${date.getHours()}`.padStart(2, 0);
+            const min = `${date.getMinutes()}`.padStart(2, 0);
+            const displayDate = `${day}/${month}/${year}, ${hour}:${min}`;
+
             const html = ` <div class="card">
-                     <h4 class="time">${qTime.getHours()}:${qTime.getMinutes()}</h4>
+                     <h4 class="time">${displayDate}</h4>
                      <h3 class="state">${tide.type} Tide</h3>
                      <h4 class="height">${tide.height.toFixed(2)}m</h4>
                </div>`;
