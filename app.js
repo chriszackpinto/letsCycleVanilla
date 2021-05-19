@@ -93,7 +93,7 @@ window.addEventListener("load", () => {
           const data = jsonData.data.slice(0, 3);
           console.log(jsonData);
           tides.innerHTML = ``;
-          data.map((tide) => {
+          data.forEach((tide) => {
             const date = new Date(tide.time);
 
             const day = `${date.getDate()}`.padStart(2, 0);
