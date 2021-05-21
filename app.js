@@ -28,7 +28,7 @@ window.addEventListener("load", () => {
         .then((data2) => {
           console.log(data2);
           const tempTemp = data2.main.temp;
-          tempDeg.textContent = tempTemp + "°C";
+          tempDeg.textContent = tempTemp.toFixed(1) + "°C";
           tempDes.textContent = data2.weather[0].main;
 
           let farenheit =
@@ -40,7 +40,7 @@ window.addEventListener("load", () => {
               tempDeg.textContent = farenheit;
             } else {
               tempSpan.textContent = "°C";
-              tempDeg.textContent = tempTemp + "°C";
+              tempDeg.textContent = tempTemp.toFixed(1) + "°C";
             }
           };
 
