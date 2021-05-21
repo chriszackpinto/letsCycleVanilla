@@ -22,8 +22,8 @@ It ~~just~~ mentions High/Low Tide along with the Tidal Timing **and** Weather a
 Screenshots: (New version)
 
 <img src="https://user-images.githubusercontent.com/81745636/119188732-b3d7ed00-ba98-11eb-9e46-070524f67853.png" width="750">
-<img src="https://user-images.githubusercontent.com/81745636/119190372-e1be3100-ba9a-11eb-8e92-29153bd89387.png" width="375">
-<img src="https://user-images.githubusercontent.com/81745636/119190377-e387f480-ba9a-11eb-8ab7-a72570878abf.png" width="375">
+<img src="https://user-images.githubusercontent.com/81745636/119190728-5beeb580-ba9b-11eb-9e45-44f9a65f0830.jpg" width="375">
+<img src="https://user-images.githubusercontent.com/81745636/119190734-5db87900-ba9b-11eb-9746-7e77ea9e1fd4.jpg" width="375">
 
 
 Screenshots: (Old version)
