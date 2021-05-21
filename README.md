@@ -1,3 +1,4 @@
+
 # letsCycle #
 
 
@@ -21,10 +22,8 @@ It ~~just~~ mentions High/Low Tide along with the Tidal Timing **and** Weather a
 Screenshots: (New version)
 
 <img src="https://user-images.githubusercontent.com/81745636/119188732-b3d7ed00-ba98-11eb-9e46-070524f67853.png" width="750">
-<img src="https://user-images.githubusercontent.com/81745636/119188830-dbc75080-ba98-11eb-9863-a17b51c884fa.jpg" width="375">
-<img src="https://user-images.githubusercontent.com/81745636/119188840-dff36e00-ba98-11eb-8e33-02a9eba8a5f7.jpg" width="375">
-
-
+<img src="https://user-images.githubusercontent.com/81745636/119189594-dfa7a280-ba99-11eb-828a-ea08fe0dce81.png" width="375">
+<img src="https://user-images.githubusercontent.com/81745636/119189623-e8987400-ba99-11eb-97fe-0887c93d4fd8.png" width="375">
 
 
 
