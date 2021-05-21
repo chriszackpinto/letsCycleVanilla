@@ -30,17 +30,21 @@
       rel="stylesheet"
     />
 
-    <script defer src="app.js"></script>
+    <!-- <script defer src="app.js"></script> -->
   </head>
 
   <body>
     <header>
-      <h1>CYCLE ON THE BEACH!</h1>
+      <h1>LET'S CYCLE!</h1>
       <h2>TIDAL TIMES</h2>
     </header>
     <main>
       <div class="tides">
-        <h3>Waiting on API</h3>
+        <div class="card">
+          <h4 class="time">${displayDate}</h4>
+          <h3 class="state">${tide.type} Tide</h3>
+          <h4 class="height">${tide.height.toFixed(2)}m</h4>
+        </div>
       </div>
       <div class="api2">
         <div class="temperature">

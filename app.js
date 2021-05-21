@@ -71,7 +71,7 @@ window.addEventListener("load", () => {
           ];
 
           let windCard = arr[val % 16];
-          windDir.textContent = `${windSpeed} MTR/S FROM ${windCard}`;
+          windDir.textContent = `${windSpeed} MTR/S ${windCard}`;
 
           windComp.style.transform = `rotate(${windDegree}deg)`;
         });
