@@ -11,11 +11,29 @@ window.addEventListener("load", () => {
 
   const api1 = document.querySelector(".api1");
 
+  let day, month, year;
+  const updateTime = () => {
+    const currentDate = new Date();
+
+    day = `${currentDate.getDate()}`.padStart(2, 0);
+    month = `${currentDate.getMonth() + 1}`.padStart(2, 0);
+    year = currentDate.getFullYear();
+
+    document.querySelector(".hours").textContent = String(
+      currentDate.getHours()
+    ).padStart(2, 0);
+    document.querySelector(".minutes").textContent = String(
+      currentDate.getMinutes()
+    ).padStart(2, 0);
+    document.querySelector(".currDate").textContent = `${day}/${month}/${year}`;
+  };
+  updateTime();
+  setInterval(updateTime, 60000);
+
   if (
     navigator.geolocation.getCurrentPosition((position) => {
       long = position.coords.longitude;
       lat = position.coords.latitude;
-      console.log(lat, long);
 
       //API 2 - openweathermap (Public)
       const api = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=7797f19d8e620a623448b1a631d4c946&units=metric
@@ -26,7 +44,6 @@ window.addEventListener("load", () => {
           return response2.json();
         })
         .then((data2) => {
-          console.log(data2);
           const tempTemp = data2.main.temp;
           tempDeg.textContent = tempTemp.toFixed(1) + "°C";
           tempDes.textContent = data2.weather[0].main;
@@ -76,7 +93,7 @@ window.addEventListener("load", () => {
       // API 1 - stormglass (Public key on purpose)
 
       fetch(
-        `https://api.stormglass.io/v2/tide/extremes/point?lat=${lat}&lng=${long}`,
+        `https://api.stormglass.io/v2/tide/extremes/point?lat=${lat}&lng=${long}&start=${year}-${month}-${day}`,
         {
           method: "GET",
           headers: {
@@ -88,28 +105,26 @@ window.addEventListener("load", () => {
         .then((response) => response.json())
         .then((jsonData) => {
           const data1 = jsonData.data.slice(0, 4);
-          console.log(jsonData);
 
           const levels = [];
 
           data1.forEach((tide, i) => {
             const date = new Date(tide.time);
-
             const day = `${date.getDate()}`.padStart(2, 0);
             const month = `${date.getMonth() + 1}`.padStart(2, 0);
-            const year = date.getFullYear();
             const hour = `${date.getHours()}`.padStart(2, 0);
             const min = `${date.getMinutes()}`.padStart(2, 0);
             const displayTime = `${hour}:${min}`;
-            // const displayDate = `${day}/${month}/${year}, ${hour}:${min}`;
 
             levels.push(`${tide.height.toFixed(2)}`);
 
             const html = ` <div class="tide tide${i + 1}"><h4 class="state">${
               tide.type
-            }<br />${tide.height.toFixed(2)}m</h4></div><div class="time time${
+            }<span>${tide.height.toFixed(
+              2
+            )}m</span></h4></div><div class="time time${
               i + 1
-            }"><h4 class="time">${displayTime}</h4></div>`;
+            }"><h4 class="time">${displayTime}<br /><span>${day}/${month}</span></h4></div>`;
 
             api1.insertAdjacentHTML(`beforeend`, html);
           }); //ForEach

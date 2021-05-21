@@ -39,6 +39,11 @@
       <p>A Tide App</p>
     </header>
     <main>
+      <div class="currentTime">
+        <h2 class="hours">Hours</h2>
+        <h2 class="minutes">Minutes</h2>
+        <h4 class="currDate"></h4>
+      </div>
       <div class="api1">
         <div class="chart">
           <canvas id="myChart"></canvas>
@@ -46,14 +51,14 @@
       </div>
       <div class="api2">
         <div class="temperature">
-          <h2>Current<br />Weather</h2>
+          <h2>Current Weather</h2>
           <div class="tempSec">
             <h4 class="tempDeg">30.8<span>°C</span></h4>
           </div>
           <div class="tempDes">Clouds</div>
         </div>
         <div class="wind">
-          <h2>Current<br />Wind</h2>
+          <h2>Current Wind</h2>
           <svg class="wind-compass" viewBox="0 0 65 93">
             <g fill="#535e12" fill-rule="evenodd">
               <path
@@ -65,6 +70,8 @@
         </div>
       </div>
     </main>
-    <div class="copyright">&copy;Made by chriszackpinto</div>
+    <footer>
+      <div class="copyright">&copy;Made by chriszackpinto</div>
+    </footer>
   </body>
 </html>
