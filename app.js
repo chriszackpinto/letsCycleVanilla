@@ -3,23 +3,22 @@
 window.addEventListener("load", () => {
   let tempDeg = document.querySelector(".tempDeg");
   let tempDes = document.querySelector(".tempDes");
-  let tempIcon = document.querySelector(".tempIcon");
-  let tempSec = document.querySelector(".tempSec");
   let tempMain = document.querySelector(".temperature");
   const tempSpan = document.querySelector(".tempSec span");
 
   const windComp = document.querySelector(".wind-compass");
   const windDir = document.querySelector(".windDir");
 
-  const tides = document.querySelector(".tides");
+  const api1 = document.querySelector(".api1");
 
   if (
     navigator.geolocation.getCurrentPosition((position) => {
-      longi = position.coords.longitude;
-      lati = position.coords.latitude;
-      console.log(lati, longi);
+      long = position.coords.longitude;
+      lat = position.coords.latitude;
+      console.log(lat, long);
 
-      const api = `https://api.openweathermap.org/data/2.5/weather?lat=${lati}&lon=${longi}&appid=7797f19d8e620a623448b1a631d4c946&units=metric
+      //API 2 - openweathermap (Public)
+      const api = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=7797f19d8e620a623448b1a631d4c946&units=metric
       `;
 
       fetch(api)
@@ -29,21 +28,19 @@ window.addEventListener("load", () => {
         .then((data2) => {
           console.log(data2);
           const tempTemp = data2.main.temp;
-          tempDeg.textContent = tempTemp;
+          tempDeg.textContent = tempTemp + "°C";
           tempDes.textContent = data2.weather[0].main;
 
-          const icon = data2.weather[0].icon;
-          tempIcon.src = `./icons/${icon}.png`;
-
-          let farenheit = Math.round(((9 / 5) * tempTemp + 32) * 10) / 10;
+          let farenheit =
+            Math.round(((9 / 5) * tempTemp + 32) * 10) / 10 + "°F";
 
           tempMain.onclick = () => {
-            if (tempSpan.textContent === "C") {
-              tempSpan.textContent = "F";
+            if (tempSpan.textContent === "°C") {
+              tempSpan.textContent = "°F";
               tempDeg.textContent = farenheit;
             } else {
-              tempSpan.textContent = "C";
-              tempDeg.textContent = tempTemp;
+              tempSpan.textContent = "°C";
+              tempDeg.textContent = tempTemp + "°C";
             }
           };
 
@@ -76,10 +73,10 @@ window.addEventListener("load", () => {
           windComp.style.transform = `rotate(${windDegree}deg)`;
         });
 
-      // New API - stormglass (Public key on purpose)
+      // API 1 - stormglass (Public key on purpose)
 
       fetch(
-        `https://api.stormglass.io/v2/tide/extremes/point?lat=${lati}&lng=${longi}`,
+        `https://api.stormglass.io/v2/tide/extremes/point?lat=${lat}&lng=${long}`,
         {
           method: "GET",
           headers: {
@@ -90,10 +87,12 @@ window.addEventListener("load", () => {
       )
         .then((response) => response.json())
         .then((jsonData) => {
-          const data = jsonData.data.slice(0, 3);
+          const data1 = jsonData.data.slice(0, 4);
           console.log(jsonData);
-          tides.innerHTML = ``;
-          data.forEach((tide) => {
+
+          const levels = [];
+
+          data1.forEach((tide, i) => {
             const date = new Date(tide.time);
 
             const day = `${date.getDate()}`.padStart(2, 0);
@@ -101,17 +100,89 @@ window.addEventListener("load", () => {
             const year = date.getFullYear();
             const hour = `${date.getHours()}`.padStart(2, 0);
             const min = `${date.getMinutes()}`.padStart(2, 0);
-            const displayDate = `${day}/${month}/${year}, ${hour}:${min}`;
+            const displayTime = `${hour}:${min}`;
+            // const displayDate = `${day}/${month}/${year}, ${hour}:${min}`;
 
-            const html = ` <div class="card">
-                     <h4 class="time">${displayDate}</h4>
-                     <h3 class="state">${tide.type} Tide</h3>
-                     <h4 class="height">${tide.height.toFixed(2)}m</h4>
-               </div>`;
+            levels.push(`${tide.height.toFixed(2)}`);
 
-            tides.insertAdjacentHTML(`beforeend`, html);
-          });
-        });
-    })
-  );
-});
+            const html = ` <div class="tide tide${i + 1}"><h4 class="state">${
+              tide.type
+            }<br />${tide.height.toFixed(2)}m</h4></div><div class="time time${
+              i + 1
+            }"><h4 class="time">${displayTime}</h4></div>`;
+
+            api1.insertAdjacentHTML(`beforeend`, html);
+          }); //ForEach
+
+          //Chart
+
+          //Setup
+
+          // const levels = [1, -1.5, 1.5, -0.51];
+
+          const data = {
+            labels: ["", "", "", "", "", ""],
+            datasets: [
+              {
+                label: "",
+                data: [0, ...levels, 0],
+                fill: "start",
+                backgroundColor: "#D7ED7E",
+                borderColor: "D7ED7E",
+                lineTension: 0.3,
+                pointRadius: 0,
+              },
+            ],
+          };
+
+          //Config
+
+          // Change these settings to change the display for different parts of the X axis
+          // grid configuiration
+
+          const config = {
+            type: "line",
+            data: data,
+            options: {
+              layout: { padding: -7 },
+              responsive: true,
+              plugins: {
+                legend: { display: false },
+                title: { display: false },
+                tooltip: { enabled: false },
+              }, //plugin
+              scales: {
+                x: {
+                  grid: {
+                    display: true,
+                    drawBorder: false,
+                    //drawOnChartArea: true,
+                    drawTicks: true,
+                    color: "white",
+                    drawTicks: false,
+
+                    //borderColor:'white',
+                    z: 2,
+                  },
+                  ticks: { display: false },
+                }, //x
+                y: {
+                  min: -1.5,
+                  max: 1.5,
+                  grid: {
+                    display: false,
+                    drawBorder: false,
+                  },
+                  ticks: { display: false },
+                }, //y
+              }, //scales
+            }, //options
+          };
+
+          //Render chart
+
+          var myChart = new Chart(document.getElementById("myChart"), config);
+        }); //API 1 Response
+    }) //Current position
+  ); //Geolocation IF
+}); //Eventlistener Load
