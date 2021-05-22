@@ -16,7 +16,7 @@ It ~~just~~ mentions High/Low Tide along with the Tidal Timing **and** Weather a
 
 
 - [x] **Switch API** (50/day limit)
-- [x] Update UI ~~ Currently basic since focused on functionality~~
+- [x] Update UI ~~Currently basic since focused on functionality~~
 
 
 Screenshots: (New version)
