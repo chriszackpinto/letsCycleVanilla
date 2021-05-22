@@ -4,6 +4,8 @@
 
 Where's the best place for a great cycling experience? The beach!
 
+You have the whole world on one side and nothing but the open sea and sky on the other! This, along with the constant breeze is quite a unique experience! 
+
 However, it's next to impossible to ride during a high tide!
 
 Here's a quick way to check the tide and if the weather is suitable for a fun ride
