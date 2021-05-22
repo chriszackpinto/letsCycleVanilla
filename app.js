@@ -118,13 +118,13 @@ window.addEventListener("load", () => {
 
             levels.push(`${tide.height.toFixed(2)}`);
 
-            const html = ` <div class="tide tide${i + 1}"><h4 class="state">${
+            const html = ` <div class="tide tide${i + 1}"><p class="state">${
               tide.type
             }<span>${tide.height.toFixed(
               2
-            )}m</span></h4></div><div class="time time${
+            )}m</span></p></div><div class="time time${
               i + 1
-            }"><h4 class="time">${displayTime}<br /><span>${day}/${month}</span></h4></div>`;
+            }"><p class="time">${displayTime}<br /><span>${day}/${month}</span></p></div>`;
 
             api1.insertAdjacentHTML(`beforeend`, html);
           }); //ForEach
