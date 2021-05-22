@@ -8,6 +8,7 @@
       name="description"
       content="An app created to show the user the current sea tide as well as the tides of the day, along with the temperature, weather, wind speed and its direction."
     />
+    <meta name="theme-color" content="#77861d" />
     <title>Let's Cycle!</title>
     <link
       rel="apple-touch-icon"
@@ -27,9 +28,10 @@
       href="./img/favicon-16x16.png"
     />
     <link rel="stylesheet" href="style.css" />
-
+    <link rel="manifest" href="manifest.json" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
+      defer
       href="https://fonts.googleapis.com/css2?family=Antonio:wght@700&display=swap"
       rel="stylesheet"
     />
@@ -77,5 +79,10 @@
     <footer>
       <div class="copyright">&copy;Made by chriszackpinto</div>
     </footer>
+    <script>
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.register("/service-worker.js");
+      }
+    </script>
   </body>
 </html>
