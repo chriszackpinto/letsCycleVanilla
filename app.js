@@ -182,8 +182,8 @@ window.addEventListener("load", () => {
                   ticks: { display: false },
                 }, //x
                 y: {
-                  min: -2,
-                  max: 2,
+                  min: -1.8,
+                  max: 1.5,
                   grid: {
                     display: false,
                     drawBorder: false,
