@@ -143,7 +143,7 @@ window.addEventListener("load", () => {
                 data: [0, ...levels, 0],
                 fill: "start",
                 backgroundColor: "#D7ED7E",
-                borderColor: "D7ED7E",
+                borderColor: "#181818",
                 lineTension: 0.3,
                 pointRadius: 0,
               },
@@ -182,8 +182,8 @@ window.addEventListener("load", () => {
                   ticks: { display: false },
                 }, //x
                 y: {
-                  min: -1.8,
-                  max: 1.5,
+                  min: -3,
+                  max: 2.5,
                   grid: {
                     display: false,
                     drawBorder: false,
